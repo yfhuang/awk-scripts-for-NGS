@@ -1,4 +1,4 @@
-Example: summary 0 depth region from depth data by samtoos depth
+Example: summary 0 (or non-0) depth region from depth data by samtoos depth
 
 Depth information by SAMtools (samtools depth)
 
