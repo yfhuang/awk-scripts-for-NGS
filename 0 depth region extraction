@@ -1,0 +1,40 @@
+Example: summary 0 depth region from depth data by samtoos depth
+
+Depth information by SAMtools (samtools depth)
+chr1    877862  T       33      33      8       19      39
+chr1    877863  G       33      34      8       19      39
+chr1    877864  G       31      34      8       19      39
+chr1    877865  C       31      34      8       19      39
+chr1    877866  C       32      33      8       19      39
+chr1    877867  C       32      34      8       19      39
+chr1    877868  G       32      34      8       18      40
+chr1    877939  G       42      35      0       1       41
+chr1    877940  C       41      34      0       1       41
+chr1    877941  T       41      34      0       0       41
+chr1    877942  G       41      34      0       0       41
+chr1    877943  G       41      34      0       0       41
+chr1    877944  A       40      34      0       0       41
+chr1    877945  G       40      35      0       0       41
+chr1    877946  C       40      35      0       0       41
+chr1    877947  T       40      35      0       0       41
+chr1    877948  G       41      36      0       0       41
+chr1    877949  C       42      36      0       0       42
+chr1    877950  C       42      36      0       0       42
+chr1    877951  C       42      37      0       0       41
+chr1    877952  G       42      37      0       0       41
+chr1    877953  C       42      37      0       0       40
+chr1    877954  C       42      37      0       0       40
+chr1    877955  G       42      37      0       0       40
+chr1    877956  A       42      37      0       0       40
+chr1    877957  C       42      38      0       0       40
+chr1    877958  C       42      38      0       0       40
+chr1    877959  T       42      38      0       0       40
+chr1    877960  C       42      38      0       0       40
+chr1    877961  C       43      38      0       0       40
+
+Code:
+chr: chromosome
+ppos: previous position of previous
+pos: previous position
+
+awk 'BEGIN{chr=""; pos=-1; ppos=-1'}{if(chr=="" && pos=="-1"){chr=$1; pos=$2; ppos=$2;}else{if($1!=chr){print chr"\t"ppos"\t"pos; chr=$1; pos=$2; ppos=$2;}else{if($2-pos!="1"){print chr"\t"ppos"\t"pos; ppos=$2; pos=$2;}else{pos=$2;}} }}'
