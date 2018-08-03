@@ -3,7 +3,7 @@ Example: summary 0 (or non-0) depth region from depth data by samtoos depth
 Depth information by SAMtools (samtools depth)
 
 samtools depth -a -a in1.bam [in2.bam [...]]
--a -a (-aa): output absolutely all positions, including unused ref. sequences
+-a -a (-aa): output absolutely all positions, including unused ref. sequences (N)
 
 chr1    877862  T       33      33      8       19      39
 chr1    877863  G       33      34      8       19      39
