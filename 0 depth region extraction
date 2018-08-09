@@ -38,7 +38,7 @@ chr1    877961  C       43      38      0       0       40
 
 Code:
 
-awk 'BEGIN{chr=""; pos=-1; ppos=-1'}{if(chr=="" && pos=="-1"){chr=$1; pos=$2; ppos=$2;}else{if($1!=chr){print chr"\t"ppos"\t"pos; chr=$1; pos=$2; ppos=$2;}else{if($2-pos!="1"){print chr"\t"ppos"\t"pos; ppos=$2; pos=$2;}else{pos=$2;}} }}'
+awk 'BEGIN{chr=""; pos=-1; ppos=-1;}{if(chr=="" && pos=="-1"){chr=$1; pos=$2; ppos=$2;}else{if($1!=chr){print chr"\t"ppos"\t"pos; chr=$1; pos=$2; ppos=$2;}else{if($2-pos!="1"){print chr"\t"ppos"\t"pos; ppos=$2; pos=$2;}else{pos=$2;}} }}'
 
 chr: chromosome
 ppos: previous position of previous
