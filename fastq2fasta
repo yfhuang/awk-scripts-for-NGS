@@ -10,6 +10,8 @@ Output (FastA format):
 >XXXXXX:57:000000000-XXXXX:1:1101:9033:1181 1:N:0:1
 AGCGACGCTCAGACAGGCGTAGCCCCGGGAGGAACCCGGGGCCGCAAGTGCGTTCGAAGTGTCGATGATCAATGTGTCCTGCAATTCACATTAATTCTCGCAGCTAGCTGCGTTCTTCATCGACGCACGAGCCGAGTGATCCACCGCTAAGAATCG
 
-cat your_input.fq | awk '{if(NR%4==1) {printf(">%s\n",substr($0,2));} else if(NR%4==2) print;}' > your_output.fa
+Code:
+
+  cat your_input.fq | awk '{if(NR%4==1) {printf(">%s\n",substr($0,2));} else if(NR%4==2) print;}' > your_output.fa
 
 NR: the number of records (a.k.a line number)
